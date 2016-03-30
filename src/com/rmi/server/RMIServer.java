@@ -14,7 +14,7 @@ public class RMIServer {
 		try {
 			System.out.println("Attempt to start Server. :)");
 			LocateRegistry.createRegistry(2016);
-			Calculator stub=new CalculatorRemote();
+			Calculator stub=new CalculatorRemoteImpl();
 			Naming.rebind("rmi://localhost:2016/Calculator", stub);
 			//			Registry registry=LocateRegistry.getRegistry();
 			//			registry.bind("Calc", stub);
